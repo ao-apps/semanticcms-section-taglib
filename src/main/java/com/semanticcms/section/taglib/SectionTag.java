@@ -30,8 +30,10 @@ import com.semanticcms.section.model.Section;
 import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
 import java.io.Writer;
+import javax.servlet.ServletException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.PageContext;
+import javax.servlet.jsp.SkipPageException;
 
 public class SectionTag extends ElementTag<Section> {
 
@@ -52,7 +54,7 @@ public class SectionTag extends ElementTag<Section> {
 	}
 
 	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException {
+	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeSection(out, context, element, pageIndex);
 	}
 }
