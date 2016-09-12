@@ -26,7 +26,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	<display-name>semanticcms-section-taglib</display-name>
 	<tlib-version>1.0</tlib-version>
 	<short-name>semanticcms-section-taglib</short-name>
-	<uri>https://semanticcms.com/semanticcms-section-taglib</uri>
+	<uri>https://semanticcms.com/section/taglib/</uri>
 	<tag>
 		<description><![CDATA[
 			<p>
