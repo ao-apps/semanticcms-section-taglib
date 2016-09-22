@@ -50,7 +50,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 			]]></description>
 			<name>id</name>
 			<required>false</required>
-			<rtexprvalue>false</rtexprvalue>
+			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.String</type>
 		</attribute>
 		<attribute>
