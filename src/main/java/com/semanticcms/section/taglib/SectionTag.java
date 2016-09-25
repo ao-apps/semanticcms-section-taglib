@@ -22,6 +22,7 @@
  */
 package com.semanticcms.section.taglib;
 
+import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.PageIndex;
@@ -30,31 +31,41 @@ import com.semanticcms.section.model.Section;
 import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
 import java.io.Writer;
+import javax.el.ELContext;
 import javax.servlet.ServletException;
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.SkipPageException;
 
 public class SectionTag extends ElementTag<Section> {
 
-	public SectionTag() {
-		super(new Section());
+	private Object label;
+	public void setLabel(Object label) {
+		this.label = label;
 	}
 
-	public void setLabel(String label) {
-		element.setLabel(label);
+	@Override
+	protected Section createElement() {
+		return new Section();
+	}
+
+	@Override
+	protected void evaluateAttributes(Section section, ELContext elContext) throws JspTagException, IOException {
+		super.evaluateAttributes(section, elContext);
+		section.setLabel(resolveValue(label, String.class, elContext));
 	}
 
 	private PageIndex pageIndex;
 	@Override
-	protected void doBody(CaptureLevel captureLevel) throws JspException, IOException {
-		final PageContext pageContext = (PageContext)getJspContext();
+	protected void doBody(Section section, CaptureLevel captureLevel) throws JspException, IOException {
+		PageContext pageContext = (PageContext)getJspContext();
 		pageIndex = PageIndex.getCurrentPageIndex(pageContext.getRequest());
-		super.doBody(captureLevel);
+		super.doBody(section ,captureLevel);
 	}
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionImpl.writeSection(out, context, element, pageIndex);
+		SectionImpl.writeSection(out, context, getElement(), pageIndex);
 	}
 }

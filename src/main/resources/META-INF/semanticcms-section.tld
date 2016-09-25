@@ -55,6 +55,9 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 			<required>false</required>
 			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.String</type>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
 		</attribute>
 		<attribute>
 			<description><![CDATA[
@@ -65,6 +68,9 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 			<required>true</required>
 			<rtexprvalue>true</rtexprvalue>
 			<type>java.lang.String</type>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
 		</attribute>
 	</tag>
 </taglib>
