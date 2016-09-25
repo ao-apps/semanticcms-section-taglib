@@ -32,6 +32,7 @@ import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
+import javax.el.ValueExpression;
 import javax.servlet.ServletException;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
@@ -40,8 +41,8 @@ import javax.servlet.jsp.SkipPageException;
 
 public class SectionTag extends ElementTag<Section> {
 
-	private Object label;
-	public void setLabel(Object label) {
+	private ValueExpression label;
+	public void setLabel(ValueExpression label) {
 		this.label = label;
 	}
 
