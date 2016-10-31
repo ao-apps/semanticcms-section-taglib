@@ -3,6 +3,7 @@ Sections nested within [SemanticCMS](https://semanticcms.com/) pages and element
 
 ## Project Links
 * [Project Home](https://semanticcms.com/section/taglib/)
+* [Changelog](https://semanticcms.com/section/taglib/changelog)
 * [API Docs](https://semanticcms.com/section/taglib/apidocs/)
 * [Maven Central Repository](https://search.maven.org/#search%7Cgav%7C1%7Cg:%22com.semanticcms%22%20AND%20a:%22semanticcms-section-taglib%22)
 * [GitHub](https://github.com/aoindustries/semanticcms-section-taglib)
