@@ -25,7 +25,9 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
-	<description>@{project.description}</description>
+	<description><![CDATA[
+		<p>@{project.description}</p>
+	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
 		<!-- Release: @{project.version} -->
@@ -49,10 +51,12 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		<body-content>scriptless</body-content>
 		<attribute>
 			<description><![CDATA[
-				The id used in URL anchors.
-				If not provided, is generated from the label.
-				Must be unique per page.
-				Ids generated from labels will be unique, but may change as page structure changes.
+				<p>
+					The id used in URL anchors.
+					If not provided, is generated from the label.
+					Must be unique per page.
+					Ids generated from labels will be unique, but may change as page structure changes.
+				</p>
 			]]></description>
 			<name>id</name>
 			<required>false</required>
@@ -62,8 +66,10 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		</attribute>
 		<attribute>
 			<description><![CDATA[
-				The label displayed.
-				This value is also used in table of contents entries.
+				<p>
+					The label displayed.
+					This value is also used in table of contents entries.
+				</p>
 			]]></description>
 			<name>label</name>
 			<required>true</required>
