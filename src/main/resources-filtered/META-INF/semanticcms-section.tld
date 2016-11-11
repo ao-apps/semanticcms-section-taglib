@@ -26,7 +26,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
 	<description><![CDATA[
-		<p>@{project.description}</p>
+		<p>@{description.html}</p>
 	]]></description>
 	<display-name>@{project.name}</display-name>
 	<tlib-version>
@@ -39,11 +39,11 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		<description><![CDATA[
 			<p>
 				Creates section and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; tags based on nesting levels.
-				The page title is always added as the &lt;h1&gt;
+				The page title is typically incorporated in the &lt;h1&gt; by the view.
 			</p>
 			<p>
-				Must be nested inside a &lt;p:page&gt; page to provide page structure
-				information for table of contents generation.
+				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+				to provide page structure information for table of contents generation.
 			</p>
 		]]></description>
 		<name>section</name>
@@ -54,6 +54,8 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 				<p>
 					The id used in URL anchors.
 					If not provided, is generated from the label.
+				</p>
+				<p>
 					Must be unique per page.
 					Ids generated from labels will be unique, but may change as page structure changes.
 				</p>
