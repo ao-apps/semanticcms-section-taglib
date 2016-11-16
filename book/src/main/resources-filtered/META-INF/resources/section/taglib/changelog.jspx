@@ -36,7 +36,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-31T02:31:02-0500"
-		dateModified="2016-11-13T21:10:46-0600"
+		dateModified="2016-11-15T19:33:12-0600"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-section-taglib:pom.version}" />
@@ -51,23 +51,32 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 				groupId="@{documented.groupId}"
 				artifactId="@{documented.artifactId}"
 				scmUrl="@{documented.scm.url}"
-			>
-				<ul>
-					<li>New <ao:a href="https://aoindustries.com/ao-oss-parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
-					<li>Project documentation moved to per-project book in <core:link book="/" page="/index.jspx" /> format.</li>
-					<li>Added changelog as top-level project link.</li>
-					<li>
-						Taglib tlib-version is now set automatically during build.
-						Unfortunately, we cannot include "-SNAPSHOT" on snapshot builds due to the requirement of "Dewey decimal"
-						for taglib versions.  The unambiguous full version is annotated via comment.
-					</li>
-				</ul>
-			</changelog:release>
+			/>
 		</c:if>
 
 		<changelog:release
 			projectName="@{documented.name}"
-			version="1.0.1"
+			version="1.4.2"
+			datePublished="2016-11-15T19:33:12-0600"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>New <ao:a href="https://aoindustries.com/ao-oss-parent/">AO OSS Parent</ao:a> POM to simplify <code>pom.xml</code> files.</li>
+				<li>Project documentation moved to per-project book in <core:link book="/" page="/index.jspx" /> format.</li>
+				<li>Added changelog as top-level project link.</li>
+				<li>
+					Taglib tlib-version is now set automatically during build.
+					Unfortunately, we cannot include "-SNAPSHOT" on snapshot builds due to the requirement of "Dewey decimal"
+					for taglib versions.  The unambiguous full version is annotated via comment.
+				</li>
+			</ul>
+		</changelog:release>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.4.1"
 			datePublished="2016-10-20T19:31:00-0500"
 			groupId="@{documented.groupId}"
 			artifactId="@{documented.artifactId}"
