@@ -22,6 +22,10 @@
  */
 package com.semanticcms.section.taglib.book;
 
+import com.aoindustries.net.Path;
+import com.aoindustries.validation.ValidationException;
+import com.semanticcms.core.model.BookRef;
+import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.Collections;
 
@@ -30,13 +34,17 @@ import java.util.Collections;
  */
 public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
-	public SemanticCmsSectionTldInitializer() {
+	public SemanticCmsSectionTldInitializer() throws ValidationException {
 		super(
 			"Section Taglib Reference",
 			"Taglib Reference",
-			"semanticcms.com",
-			"/section/taglib",
-			"/semanticcms-section.tld",
+			new ResourceRef(
+				new BookRef(
+					"semanticcms.com",
+					Path.valueOf("/section/taglib")
+				),
+				Path.valueOf("/semanticcms-section.tld")
+			),
 			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.semanticcms.section.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/")
