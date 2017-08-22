@@ -22,6 +22,7 @@
  */
 package com.semanticcms.section.taglib.book;
 
+import com.aoindustries.net.DomainName;
 import com.aoindustries.net.Path;
 import com.aoindustries.validation.ValidationException;
 import com.semanticcms.core.model.BookRef;
@@ -40,7 +41,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
-					"semanticcms.com",
+					DomainName.valueOf("semanticcms.com"),
 					Path.valueOf("/section/taglib")
 				),
 				Path.valueOf("/semanticcms-section.tld")
