@@ -25,10 +25,10 @@ package com.semanticcms.section.taglib;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
-import com.semanticcms.core.servlet.PageIndex;
+import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.core.taglib.ElementTag;
 import com.semanticcms.section.model.Section;
-import com.semanticcms.section.servlet.impl.SectionImpl;
+import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
 import java.io.IOException;
 import java.io.Writer;
 import javax.el.ELContext;
@@ -67,6 +67,6 @@ public class SectionTag extends ElementTag<Section> {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionImpl.writeSection(out, context, getElement(), pageIndex);
+		SectionHtmlRenderer.writeSection(out, context, getElement(), pageIndex);
 	}
 }
