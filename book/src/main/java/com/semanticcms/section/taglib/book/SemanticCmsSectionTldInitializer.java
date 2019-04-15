@@ -30,9 +30,6 @@ import com.semanticcms.core.model.ResourceRef;
 import com.semanticcms.tagreference.TagReferenceInitializer;
 import java.util.Collections;
 
-/**
- * @author  AO Industries, Inc.
- */
 public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
 	public SemanticCmsSectionTldInitializer() throws ValidationException {
@@ -46,7 +43,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 				),
 				Path.valueOf("/semanticcms-section.tld")
 			),
-			Maven.properties.getProperty("javac.link.javaApi.jdk16"),
+			Maven.properties.getProperty("javac.link.javaApi.jdk6"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.semanticcms.section.taglib.", Maven.properties.getProperty("documented.url") + "apidocs")
 		);
