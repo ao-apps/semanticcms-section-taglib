@@ -43,7 +43,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 				),
 				Path.valueOf("/semanticcms-section.tld")
 			),
-			Maven.properties.getProperty("javac.link.javaApi.jdk7"),
+			Maven.properties.getProperty("documented.javac.link.javaApi"),
 			Maven.properties.getProperty("javac.link.javaeeApi.6"),
 			Collections.singletonMap("com.semanticcms.section.taglib.", Maven.properties.getProperty("documented.url") + "apidocs/")
 		);
