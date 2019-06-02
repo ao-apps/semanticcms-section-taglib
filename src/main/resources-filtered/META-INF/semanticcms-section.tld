@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
 	support@aoindustries.com
 	7262 Bull Pen Cir
 	Mobile, AL 36695
@@ -37,8 +37,109 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	<uri>@{project.url}</uri>
 	<tag>
 		<description><![CDATA[
+			<p class="semanticcms-tag-reference-summary">
+				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">&lt;aside&gt;</a> element
+				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+			</p>
 			<p>
-				Creates section and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; tags based on nesting levels.
+				The page title is typically incorporated in the &lt;h1&gt; by the view.
+			</p>
+			<p>
+				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+				to provide page structure information for table of contents generation.
+			</p>
+		]]></description>
+		<name>aside</name>
+		<tag-class>com.semanticcms.section.taglib.AsideTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description><![CDATA[
+				<p>
+					The id used in URL anchors.
+					If not provided, is generated from the label.
+				</p>
+				<p>
+					Must be unique per page.
+					Ids generated from labels will be unique, but may change as page structure changes.
+				</p>
+			]]></description>
+			<name>id</name>
+			<required>false</required>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				<p>
+					The label displayed.
+					This value is also used in table of contents entries.
+				</p>
+			]]></description>
+			<name>label</name>
+			<required>true</required>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			<p class="semanticcms-tag-reference-summary">
+				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
+				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+			</p>
+			<p>
+				The page title is typically incorporated in the &lt;h1&gt; by the view.
+			</p>
+			<p>
+				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+				to provide page structure information for table of contents generation.
+			</p>
+		]]></description>
+		<name>nav</name>
+		<tag-class>com.semanticcms.section.taglib.NavTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<description><![CDATA[
+				<p>
+					The id used in URL anchors.
+					If not provided, is generated from the label.
+				</p>
+				<p>
+					Must be unique per page.
+					Ids generated from labels will be unique, but may change as page structure changes.
+				</p>
+			]]></description>
+			<name>id</name>
+			<required>false</required>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
+		</attribute>
+		<attribute>
+			<description><![CDATA[
+				<p>
+					The label displayed.
+					This value is also used in table of contents entries.
+				</p>
+			]]></description>
+			<name>label</name>
+			<required>true</required>
+			<deferred-value>
+				<type>java.lang.String</type>
+			</deferred-value>
+		</attribute>
+		<dynamic-attributes>true</dynamic-attributes>
+	</tag>
+	<tag>
+		<description><![CDATA[
+			<p class="semanticcms-tag-reference-summary">
+				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
+				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+			</p>
+			<p>
 				The page title is typically incorporated in the &lt;h1&gt; by the view.
 			</p>
 			<p>

@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,7 @@
 package com.semanticcms.section.taglib;
 
 import com.semanticcms.core.model.ElementContext;
-import com.semanticcms.section.model.Section;
+import com.semanticcms.section.model.Aside;
 import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
 import java.io.IOException;
 import java.io.Writer;
@@ -31,17 +31,17 @@ import javax.servlet.ServletException;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>
  */
-public class SectionTag extends SectioningContentTag<Section> {
+public class AsideTag extends SectioningContentTag<Aside> {
 
 	@Override
-	protected Section createElement() {
-		return new Section();
+	protected Aside createElement() {
+		return new Aside();
 	}
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeSection(out, context, getElement(), pageIndex);
+		SectionHtmlRenderer.writeAside(out, context, getElement(), pageIndex);
 	}
 }
