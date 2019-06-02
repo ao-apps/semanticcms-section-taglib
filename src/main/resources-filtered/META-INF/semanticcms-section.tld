@@ -87,7 +87,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	<tag>
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
-				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
+				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
 				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
 			</p>
 			<p>
@@ -136,7 +136,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	<tag>
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
-				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
+				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
 				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
 			</p>
 			<p>
