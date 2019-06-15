@@ -25,6 +25,8 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
 	version="2.1">
+	<!-- datePublished="2016-08-14T14:40:00-0500" -->
+	<!-- dateModified="2016-11-11T13:15:46-0600" -->
 	<description><![CDATA[
 		<p>@{description.html}</p>
 	]]></description>
@@ -36,6 +38,8 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	<short-name>section</short-name>
 	<uri>@{project.url}</uri>
 	<tag>
+		<!-- datePublished="2019-06-01T22:26:21-0500" -->
+		<!-- dateModified="2019-06-02T01:07:23-0500" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">&lt;aside&gt;</a> element
@@ -85,6 +89,7 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
 	<tag>
+		<!-- datePublished="2019-06-01T22:26:21-0500" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
@@ -134,6 +139,8 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 		<dynamic-attributes>true</dynamic-attributes>
 	</tag>
 	<tag>
+		<!-- datePublished="2016-08-14T14:40:00-0500" -->
+		<!-- dateModified="2019-06-02T01:07:23-0500" -->
 		<description><![CDATA[
 			<p class="semanticcms-tag-reference-summary">
 				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
