@@ -22,15 +22,13 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.html.servlet.HtmlEE;
+import com.aoindustries.html.Html;
 import com.semanticcms.core.model.ElementContext;
+import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.model.Aside;
 import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
-import java.io.Writer;
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.SkipPageException;
 
 /**
@@ -44,10 +42,9 @@ public class AsideTag extends SectioningContentTag<Aside> {
 	}
 
 	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		PageContext pageContext = (PageContext)getJspContext();
+	protected void writeTo(Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeAside(
-			HtmlEE.get(pageContext.getServletContext(), (HttpServletRequest)pageContext.getRequest(), out),
+			html,
 			context,
 			getElement(),
 			pageIndex
