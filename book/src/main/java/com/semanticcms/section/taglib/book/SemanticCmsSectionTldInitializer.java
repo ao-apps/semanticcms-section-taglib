@@ -29,7 +29,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
 	public SemanticCmsSectionTldInitializer() {
 		super(
-			"Section Taglib Reference",
+			Maven.properties.getProperty("project.name") + " Reference",
 			"Taglib Reference",
 			"/section/taglib",
 			"/semanticcms-section.tld",
