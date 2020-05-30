@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -45,7 +45,8 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 			),
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			Collections.singletonMap("com.semanticcms.section.taglib.", Maven.properties.getProperty("project.url") + "apidocs/")
+			// Self
+			Collections.singletonMap("com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/")
 		);
 	}
 }
