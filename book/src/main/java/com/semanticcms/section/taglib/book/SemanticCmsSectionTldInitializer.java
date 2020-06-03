@@ -23,7 +23,6 @@
 package com.semanticcms.section.taglib.book;
 
 import com.semanticcms.tagreference.TagReferenceInitializer;
-import java.util.Collections;
 
 public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
@@ -37,7 +36,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 			Maven.properties.getProperty("documented.javadoc.link.javase"),
 			Maven.properties.getProperty("documented.javadoc.link.javaee"),
 			// Self
-			Collections.singletonMap("com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/")
+			"com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/"
 		);
 	}
 }
