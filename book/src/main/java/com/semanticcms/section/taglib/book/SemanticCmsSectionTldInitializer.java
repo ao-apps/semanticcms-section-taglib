@@ -33,7 +33,7 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
 	public SemanticCmsSectionTldInitializer() throws ValidationException {
 		super(
-			Maven.properties.getProperty("project.name") + " Reference",
+			Maven.properties.getProperty("documented.name") + " Reference",
 			"Taglib Reference",
 			new ResourceRef(
 				new BookRef(
