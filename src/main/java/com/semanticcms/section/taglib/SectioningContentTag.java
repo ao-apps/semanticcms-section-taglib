@@ -81,8 +81,14 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 		super.doBody(sectioningContent ,captureLevel);
 	}
 
+	/**
+	 * @deprecated  You should probably be implementing in {@link #writeTo(com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
+	 *
+	 * @see  #writeTo(com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
+	 */
+	@Deprecated
 	@Override
-	final public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		writeTo(
 			new Html(serialization, doctype, out),
 			context,
