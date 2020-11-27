@@ -29,6 +29,7 @@ import com.semanticcms.section.model.Nav;
 import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.jsp.SkipPageException;
 
 /**
@@ -42,8 +43,9 @@ public class NavTag extends SectioningContentTag<Nav> {
 	}
 
 	@Override
-	protected void writeTo(Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+	protected void writeTo(ServletRequest request, Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeNav(
+			request,
 			html,
 			context,
 			getElement(),
