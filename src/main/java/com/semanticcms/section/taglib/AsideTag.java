@@ -29,6 +29,7 @@ import com.semanticcms.section.model.Aside;
 import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.jsp.SkipPageException;
 
 /**
@@ -42,8 +43,9 @@ public class AsideTag extends SectioningContentTag<Aside> {
 	}
 
 	@Override
-	protected void writeTo(Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+	protected void writeTo(ServletRequest request, Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionHtmlRenderer.writeAside(
+			request,
 			html,
 			context,
 			getElement(),

@@ -39,6 +39,7 @@ import javax.el.ELContext;
 import javax.el.ValueExpression;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspTagException;
@@ -66,6 +67,7 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 		sectioningContent.setLabel(resolveValue(label, String.class, elContext));
 	}
 
+	private HttpServletRequest request;
 	private PageIndex pageIndex;
 	private Serialization serialization;
 	private Doctype doctype;
@@ -74,27 +76,28 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
 		PageContext pageContext = (PageContext)getJspContext();
 		ServletContext servletContext = pageContext.getServletContext();
-		HttpServletRequest request = (HttpServletRequest)pageContext.getRequest();
+		request = (HttpServletRequest)pageContext.getRequest();
 		pageIndex = PageIndex.getCurrentPageIndex(request);
 		serialization = SerializationEE.get(servletContext, request);
 		doctype = DoctypeEE.get(servletContext, request);
-		super.doBody(sectioningContent ,captureLevel);
+		super.doBody(sectioningContent, captureLevel);
 	}
 
 	/**
-	 * @deprecated  You should probably be implementing in {@link #writeTo(com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
+	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
 	 *
-	 * @see  #writeTo(com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
+	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
 	 */
 	@Deprecated
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		writeTo(
+			request,
 			new Html(serialization, doctype, out),
 			context,
 			pageIndex
 		);
 	}
 
-	protected abstract void writeTo(Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
+	protected abstract void writeTo(ServletRequest request, Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
 }
