@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,7 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.html.Html;
+import com.aoindustries.html.Document;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.model.Section;
@@ -43,10 +43,10 @@ public class SectionTag extends SectioningContentTag<Section> {
 	}
 
 	@Override
-	protected void writeTo(ServletRequest request, Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+	protected void writeTo(ServletRequest request, Document document, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeSection(
 			request,
-			html,
+			document,
 			context,
 			getElement(),
 			pageIndex
