@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2019, 2020  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,7 +26,7 @@ import com.aoindustries.encoding.Doctype;
 import com.aoindustries.encoding.Serialization;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
-import com.aoindustries.html.Html;
+import com.aoindustries.html.Document;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
@@ -84,20 +84,20 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	}
 
 	/**
-	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
+	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Document, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
 	 *
-	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Html, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
+	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Document, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
 	 */
 	@Deprecated
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		writeTo(
 			request,
-			new Html(serialization, doctype, out),
+			new Document(serialization, doctype, out),
 			context,
 			pageIndex
 		);
 	}
 
-	protected abstract void writeTo(ServletRequest request, Html html, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
+	protected abstract void writeTo(ServletRequest request, Document document, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
 }
