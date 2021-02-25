@@ -71,6 +71,7 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	private PageIndex pageIndex;
 	private Serialization serialization;
 	private Doctype doctype;
+	private boolean indent;
 
 	@Override
 	protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
@@ -91,12 +92,9 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	@Deprecated
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		writeTo(
-			request,
-			new Document(serialization, doctype, out),
-			context,
-			pageIndex
-		);
+		Document document = new Document(serialization, doctype, out);
+		document.setIndent(false); // Do not add extra indentation to JSP
+		writeTo(request, document, context, pageIndex);
 	}
 
 	protected abstract void writeTo(ServletRequest request, Document document, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
