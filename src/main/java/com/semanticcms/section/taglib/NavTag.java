@@ -22,7 +22,7 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.html.Document;
+import com.aoindustries.html.PalpableContent;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.model.Nav;
@@ -43,10 +43,10 @@ public class NavTag extends SectioningContentTag<Nav> {
 	}
 
 	@Override
-	protected void writeTo(ServletRequest request, Document document, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+	protected <__ extends PalpableContent<__>> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeNav(
 			request,
-			document,
+			content,
 			context,
 			getElement(),
 			pageIndex

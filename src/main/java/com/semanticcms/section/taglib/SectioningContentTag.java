@@ -27,6 +27,7 @@ import com.aoindustries.encoding.Serialization;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Document;
+import com.aoindustries.html.PalpableContent;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
@@ -85,9 +86,9 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	}
 
 	/**
-	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Document, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
+	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.PalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
 	 *
-	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.Document, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
+	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.PalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
 	 */
 	@Deprecated
 	@Override
@@ -97,5 +98,5 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 		writeTo(request, document, context, pageIndex);
 	}
 
-	protected abstract void writeTo(ServletRequest request, Document document, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
+	protected abstract <__ extends PalpableContent<__>> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
 }
