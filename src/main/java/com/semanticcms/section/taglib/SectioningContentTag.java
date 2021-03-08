@@ -93,9 +93,14 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	@Deprecated
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		Document document = new Document(serialization, doctype, out);
-		document.setIndent(false); // Do not add extra indentation to JSP
-		writeTo(request, document, context, pageIndex);
+		writeTo(
+			request,
+			new Document(serialization, doctype, out)
+				.setAutonli(false) // Do not add extra newlines to JSP
+				.setIndent(false), // Do not add extra indentation to JSP
+			context,
+			pageIndex
+		);
 	}
 
 	protected abstract <__ extends PalpableContent<__>> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
