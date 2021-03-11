@@ -22,6 +22,7 @@
  */
 package com.semanticcms.section.taglib;
 
+import com.aoindustries.html.AnyDocument;
 import com.aoindustries.html.PalpableContent;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.renderer.html.PageIndex;
@@ -43,7 +44,10 @@ public class AsideTag extends SectioningContentTag<Aside> {
 	}
 
 	@Override
-	protected <__ extends PalpableContent<__>> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+	protected <
+		D extends AnyDocument<D>,
+		__ extends PalpableContent<D, __>
+	> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionHtmlRenderer.writeAside(
 			request,
 			content,
