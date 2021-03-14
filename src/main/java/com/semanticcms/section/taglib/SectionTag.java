@@ -22,8 +22,8 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.html.AnyDocument;
-import com.aoindustries.html.PalpableContent;
+import com.aoindustries.html.any.AnyDocument;
+import com.aoindustries.html.any.AnyPalpableContent;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.section.model.Section;
@@ -46,7 +46,7 @@ public class SectionTag extends SectioningContentTag<Section> {
 	@Override
 	protected <
 		D extends AnyDocument<D>,
-		__ extends PalpableContent<D, __>
+		__ extends AnyPalpableContent<D, __>
 	> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
 		SectionHtmlRenderer.writeSection(
 			request,
