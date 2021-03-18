@@ -27,7 +27,6 @@ import com.aoindustries.encoding.Serialization;
 import com.aoindustries.encoding.servlet.DoctypeEE;
 import com.aoindustries.encoding.servlet.SerializationEE;
 import com.aoindustries.html.Document;
-import com.aoindustries.html.any.AnyDocument;
 import com.aoindustries.html.any.AnyPalpableContent;
 import static com.aoindustries.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
@@ -104,8 +103,5 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 		);
 	}
 
-	protected abstract <
-		D extends AnyDocument<D>,
-		__ extends AnyPalpableContent<D, __>
-	> void writeTo(ServletRequest request, __ content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
+	protected abstract void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
 }
