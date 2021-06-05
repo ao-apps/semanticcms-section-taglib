@@ -22,13 +22,13 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.encoding.Doctype;
-import com.aoindustries.encoding.Serialization;
-import com.aoindustries.encoding.servlet.DoctypeEE;
-import com.aoindustries.encoding.servlet.SerializationEE;
-import com.aoindustries.html.Document;
-import com.aoindustries.html.any.AnyPalpableContent;
-import static com.aoindustries.taglib.AttributeUtils.resolveValue;
+import com.aoapps.encoding.Doctype;
+import com.aoapps.encoding.Serialization;
+import com.aoapps.encoding.servlet.DoctypeEE;
+import com.aoapps.encoding.servlet.SerializationEE;
+import com.aoapps.html.Document;
+import com.aoapps.html.any.AnyPalpableContent;
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.PageIndex;
@@ -86,9 +86,9 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	}
 
 	/**
-	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
+	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
 	 *
-	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoindustries.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
+	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
 	 */
 	@Deprecated
 	@Override
