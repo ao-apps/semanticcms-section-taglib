@@ -22,7 +22,7 @@
  */
 package com.semanticcms.section.taglib;
 
-import com.aoindustries.html.any.AnyPalpableContent;
+import com.aoapps.html.any.AnyPalpableContent;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.section.model.Section;
