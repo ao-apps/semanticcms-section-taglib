@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,21 +22,27 @@
  */
 package com.semanticcms.section.taglib.book;
 
-import com.semanticcms.tagreference.TagReferenceInitializer;
+import com.aoapps.net.URIParametersUtils;
+import com.aoapps.servlet.http.HttpServletUtil;
+import java.io.IOException;
+import java.util.Objects;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
-public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
+@WebServlet("/section/taglib/apidocs/com/*")
+public class ModularApidocsRedirect extends HttpServlet {
 
-	public SemanticCmsSectionTldInitializer() {
-		super(
-			Maven.properties.getProperty("documented.name") + " Reference",
-			"Taglib Reference",
-			"/section/taglib",
-			"/semanticcms-section.tld",
-			true,
-			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			// Self
-			"com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.section.taglib/"
+	private static final long serialVersionUID = 1L;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		HttpServletUtil.sendRedirect(
+			HttpServletResponse.SC_MOVED_PERMANENTLY, req, resp,
+			"/section/taglib/apidocs/com.semanticcms.section.taglib/com" + Objects.toString(req.getPathInfo(), ""),
+			URIParametersUtils.of(req.getQueryString()), true, false
 		);
 	}
 }
