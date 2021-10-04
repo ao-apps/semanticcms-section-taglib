@@ -52,7 +52,7 @@ import javax.servlet.jsp.SkipPageException;
  * is content that defines the scope of <a href="https://www.w3.org/TR/html5/sections.html#the-header-element">headings</a>
  * and <a href="https://www.w3.org/TR/html5/sections.html#the-footer-element">footers</a>.
  */
-abstract public class SectioningContentTag<SC extends SectioningContent> extends ElementTag<SC> {
+public abstract class SectioningContentTag<SC extends SectioningContent> extends ElementTag<SC> {
 
 	private ValueExpression label;
 	public void setLabel(ValueExpression label) {
@@ -60,7 +60,7 @@ abstract public class SectioningContentTag<SC extends SectioningContent> extends
 	}
 
 	@Override
-	abstract protected SC createElement();
+	protected abstract SC createElement();
 
 	@Override
 	protected void evaluateAttributes(SC sectioningContent, ELContext elContext) throws JspTagException, IOException {
