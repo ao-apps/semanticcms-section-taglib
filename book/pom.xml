@@ -71,20 +71,20 @@ along with semanticcms-section-taglib.  If not, see <http://www.gnu.org/licenses
 	</developers>
 
 	<scm>
-		<connection>scm:git:git://github.com/aoindustries/semanticcms-section-taglib.git</connection>
-		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-section-taglib.git</developerConnection>
-		<url>https://github.com/aoindustries/semanticcms-section-taglib</url>
+		<connection>scm:git:git://github.com/ao-apps/semanticcms-section-taglib.git</connection>
+		<developerConnection>scm:git:git@github.com:ao-apps/semanticcms-section-taglib.git</developerConnection>
+		<url>https://github.com/ao-apps/semanticcms-section-taglib</url>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/aoindustries/semanticcms-section-taglib/issues</url>
+		<url>https://github.com/ao-apps/semanticcms-section-taglib/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>GitHub Actions</system>
-		<url>https://github.com/aoindustries/semanticcms-section-taglib/actions</url>
+		<url>https://github.com/ao-apps/semanticcms-section-taglib/actions</url>
 	</ciManagement>
 
 	<repositories>
