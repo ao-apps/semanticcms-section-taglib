@@ -90,7 +90,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
 	 *
 	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
 	 */
-	@Deprecated
+	@Deprecated(forRemoval = false)
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		writeTo(
