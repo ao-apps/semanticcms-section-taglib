@@ -36,6 +36,7 @@ import com.semanticcms.core.taglib.ElementTag;
 import com.semanticcms.section.model.SectioningContent;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.charset.Charset;
 import javax.el.ELContext;
 import javax.el.ValueExpression;
 import javax.servlet.ServletContext;
@@ -72,6 +73,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
 	private PageIndex pageIndex;
 	private Serialization serialization;
 	private Doctype doctype;
+	private Charset characterEncoding;
 
 	@Override
 	protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
@@ -81,6 +83,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
 		pageIndex = PageIndex.getCurrentPageIndex(request);
 		serialization = SerializationEE.get(servletContext, request);
 		doctype = DoctypeEE.get(servletContext, request);
+		characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
 		super.doBody(sectioningContent, captureLevel);
 	}
 
@@ -94,7 +97,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		writeTo(
 			request,
-			new Document(serialization, doctype, out)
+			new Document(serialization, doctype, characterEncoding, out)
 				.setAutonli(false) // Do not add extra newlines to JSP
 				.setIndent(false), // Do not add extra indentation to JSP
 			context,
