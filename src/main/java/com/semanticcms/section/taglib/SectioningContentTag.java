@@ -56,55 +56,55 @@ import javax.servlet.jsp.SkipPageException;
  */
 public abstract class SectioningContentTag<SC extends SectioningContent> extends ElementTag<SC> {
 
-	private ValueExpression label;
-	public void setLabel(ValueExpression label) {
-		this.label = label;
-	}
+  private ValueExpression label;
+  public void setLabel(ValueExpression label) {
+    this.label = label;
+  }
 
-	@Override
-	protected abstract SC createElement();
+  @Override
+  protected abstract SC createElement();
 
-	@Override
-	protected void evaluateAttributes(SC sectioningContent, ELContext elContext) throws JspTagException, IOException {
-		super.evaluateAttributes(sectioningContent, elContext);
-		sectioningContent.setLabel(resolveValue(label, String.class, elContext));
-	}
+  @Override
+  protected void evaluateAttributes(SC sectioningContent, ELContext elContext) throws JspTagException, IOException {
+    super.evaluateAttributes(sectioningContent, elContext);
+    sectioningContent.setLabel(resolveValue(label, String.class, elContext));
+  }
 
-	private HttpServletRequest request;
-	private PageIndex pageIndex;
-	private Serialization serialization;
-	private Doctype doctype;
-	private Charset characterEncoding;
+  private HttpServletRequest request;
+  private PageIndex pageIndex;
+  private Serialization serialization;
+  private Doctype doctype;
+  private Charset characterEncoding;
 
-	@Override
-	protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
-		PageContext pageContext = (PageContext)getJspContext();
-		ServletContext servletContext = pageContext.getServletContext();
-		request = (HttpServletRequest)pageContext.getRequest();
-		pageIndex = PageIndex.getCurrentPageIndex(request);
-		serialization = SerializationEE.get(servletContext, request);
-		doctype = DoctypeEE.get(servletContext, request);
-		characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
-		super.doBody(sectioningContent, captureLevel);
-	}
+  @Override
+  protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
+    PageContext pageContext = (PageContext)getJspContext();
+    ServletContext servletContext = pageContext.getServletContext();
+    request = (HttpServletRequest)pageContext.getRequest();
+    pageIndex = PageIndex.getCurrentPageIndex(request);
+    serialization = SerializationEE.get(servletContext, request);
+    doctype = DoctypeEE.get(servletContext, request);
+    characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
+    super.doBody(sectioningContent, captureLevel);
+  }
 
-	/**
-	 * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
-	 *
-	 * @see  #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
-	 */
-	@Deprecated(forRemoval = false)
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		writeTo(
-			request,
-			new Document(serialization, doctype, characterEncoding, out)
-				.setAutonli(false) // Do not add extra newlines to JSP
-				.setIndent(false), // Do not add extra indentation to JSP
-			context,
-			pageIndex
-		);
-	}
+  /**
+   * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
+   *
+   * @see  #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
+   */
+  @Deprecated(forRemoval = false)
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+    writeTo(
+      request,
+      new Document(serialization, doctype, characterEncoding, out)
+        .setAutonli(false) // Do not add extra newlines to JSP
+        .setIndent(false), // Do not add extra indentation to JSP
+      context,
+      pageIndex
+    );
+  }
 
-	protected abstract void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
+  protected abstract void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException;
 }

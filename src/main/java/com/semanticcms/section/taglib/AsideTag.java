@@ -38,19 +38,19 @@ import javax.servlet.jsp.SkipPageException;
  */
 public class AsideTag extends SectioningContentTag<Aside> {
 
-	@Override
-	protected Aside createElement() {
-		return new Aside();
-	}
+  @Override
+  protected Aside createElement() {
+    return new Aside();
+  }
 
-	@Override
-	protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeAside(
-			request,
-			content,
-			context,
-			getElement(),
-			pageIndex
-		);
-	}
+  @Override
+  protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+    SectionHtmlRenderer.writeAside(
+      request,
+      content,
+      context,
+      getElement(),
+      pageIndex
+    );
+  }
 }

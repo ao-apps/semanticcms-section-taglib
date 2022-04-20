@@ -38,19 +38,19 @@ import javax.servlet.jsp.SkipPageException;
  */
 public class SectionTag extends SectioningContentTag<Section> {
 
-	@Override
-	protected Section createElement() {
-		return new Section();
-	}
+  @Override
+  protected Section createElement() {
+    return new Section();
+  }
 
-	@Override
-	protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeSection(
-			request,
-			content,
-			context,
-			getElement(),
-			pageIndex
-		);
-	}
+  @Override
+  protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
+    SectionHtmlRenderer.writeSection(
+      request,
+      content,
+      context,
+      getElement(),
+      pageIndex
+    );
+  }
 }
