@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
-Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021  AO Industries, Inc.
-	support@aoindustries.com
-	7262 Bull Pen Cir
-	Mobile, AL 36695
+Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2021, 2022  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
 
 This file is part of semanticcms-section-taglib.
 
@@ -22,171 +22,171 @@ You should have received a copy of the GNU Lesser General Public License
 along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/licenses/>.
 -->
 <taglib xmlns="http://java.sun.com/xml/ns/javaee"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
-	version="2.1">
-	<!-- datePublished="2016-08-14T14:40:00-05:00" -->
-	<!-- dateModified="2016-11-11T13:15:46-06:00" -->
-	<description><![CDATA[
-		<p>@{description.html}</p>
-	]]></description>
-	<display-name>@{project.name}</display-name>
-	<tlib-version>
-		<!-- Release: @{project.version} -->
-		@{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
-	</tlib-version>
-	<short-name>section</short-name>
-	<uri>@{project.url}</uri>
-	<tag>
-		<!-- datePublished="2019-06-01T22:26:21-05:00" -->
-		<!-- dateModified="2019-06-02T01:07:23-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">&lt;aside&gt;</a> element
-				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
-			</p>
-			<p>
-				The page title is typically incorporated in the &lt;h1&gt; by the view.
-			</p>
-			<p>
-				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
-				to provide page structure information for table of contents generation.
-			</p>
-		]]></description>
-		<name>aside</name>
-		<tag-class>com.semanticcms.section.taglib.AsideTag</tag-class>
-		<body-content>scriptless</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The id used in URL anchors.
-					If not provided, is generated from the label.
-				</p>
-				<p>
-					Must be unique per page.
-					Ids generated from labels will be unique, but may change as page structure changes.
-				</p>
-			]]></description>
-			<name>id</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The label displayed.
-					This value is also used in table of contents entries.
-				</p>
-			]]></description>
-			<name>label</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<dynamic-attributes>true</dynamic-attributes>
-	</tag>
-	<tag>
-		<!-- datePublished="2019-06-01T22:26:21-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
-				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
-			</p>
-			<p>
-				The page title is typically incorporated in the &lt;h1&gt; by the view.
-			</p>
-			<p>
-				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
-				to provide page structure information for table of contents generation.
-			</p>
-		]]></description>
-		<name>nav</name>
-		<tag-class>com.semanticcms.section.taglib.NavTag</tag-class>
-		<body-content>scriptless</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The id used in URL anchors.
-					If not provided, is generated from the label.
-				</p>
-				<p>
-					Must be unique per page.
-					Ids generated from labels will be unique, but may change as page structure changes.
-				</p>
-			]]></description>
-			<name>id</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The label displayed.
-					This value is also used in table of contents entries.
-				</p>
-			]]></description>
-			<name>label</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<dynamic-attributes>true</dynamic-attributes>
-	</tag>
-	<tag>
-		<!-- datePublished="2016-08-14T14:40:00-05:00" -->
-		<!-- dateModified="2019-06-02T01:07:23-05:00" -->
-		<description><![CDATA[
-			<p class="semanticcms-tag-reference-summary">
-				Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
-				and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
-			</p>
-			<p>
-				The page title is typically incorporated in the &lt;h1&gt; by the view.
-			</p>
-			<p>
-				Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
-				to provide page structure information for table of contents generation.
-			</p>
-		]]></description>
-		<name>section</name>
-		<tag-class>com.semanticcms.section.taglib.SectionTag</tag-class>
-		<body-content>scriptless</body-content>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The id used in URL anchors.
-					If not provided, is generated from the label.
-				</p>
-				<p>
-					Must be unique per page.
-					Ids generated from labels will be unique, but may change as page structure changes.
-				</p>
-			]]></description>
-			<name>id</name>
-			<required>false</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<attribute>
-			<description><![CDATA[
-				<p>
-					The label displayed.
-					This value is also used in table of contents entries.
-				</p>
-			]]></description>
-			<name>label</name>
-			<required>true</required>
-			<deferred-value>
-				<type>java.lang.String</type>
-			</deferred-value>
-		</attribute>
-		<dynamic-attributes>true</dynamic-attributes>
-	</tag>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+  version="2.1">
+  <!-- datePublished="2016-08-14T14:40:00-05:00" -->
+  <!-- dateModified="2016-11-11T13:15:46-06:00" -->
+  <description><![CDATA[
+    <p>@{description.html}</p>
+  ]]></description>
+  <display-name>@{project.name}</display-name>
+  <tlib-version>
+    <!-- Release: @{project.version} -->
+    @{parsedVersion.majorVersion}.@{parsedVersion.minorVersion}.@{parsedVersion.incrementalVersion}
+  </tlib-version>
+  <short-name>section</short-name>
+  <uri>@{project.url}</uri>
+  <tag>
+    <!-- datePublished="2019-06-01T22:26:21-05:00" -->
+    <!-- dateModified="2019-06-02T01:07:23-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        Creates an <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">&lt;aside&gt;</a> element
+        and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+      </p>
+      <p>
+        The page title is typically incorporated in the &lt;h1&gt; by the view.
+      </p>
+      <p>
+        Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+        to provide page structure information for table of contents generation.
+      </p>
+    ]]></description>
+    <name>aside</name>
+    <tag-class>com.semanticcms.section.taglib.AsideTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The id used in URL anchors.
+          If not provided, is generated from the label.
+        </p>
+        <p>
+          Must be unique per page.
+          Ids generated from labels will be unique, but may change as page structure changes.
+        </p>
+      ]]></description>
+      <name>id</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The label displayed.
+          This value is also used in table of contents entries.
+        </p>
+      ]]></description>
+      <name>label</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+  <tag>
+    <!-- datePublished="2019-06-01T22:26:21-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">&lt;nav&gt;</a> element
+        and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+      </p>
+      <p>
+        The page title is typically incorporated in the &lt;h1&gt; by the view.
+      </p>
+      <p>
+        Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+        to provide page structure information for table of contents generation.
+      </p>
+    ]]></description>
+    <name>nav</name>
+    <tag-class>com.semanticcms.section.taglib.NavTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The id used in URL anchors.
+          If not provided, is generated from the label.
+        </p>
+        <p>
+          Must be unique per page.
+          Ids generated from labels will be unique, but may change as page structure changes.
+        </p>
+      ]]></description>
+      <name>id</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The label displayed.
+          This value is also used in table of contents entries.
+        </p>
+      ]]></description>
+      <name>label</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
+  <tag>
+    <!-- datePublished="2016-08-14T14:40:00-05:00" -->
+    <!-- dateModified="2019-06-02T01:07:23-05:00" -->
+    <description><![CDATA[
+      <p class="semanticcms-tag-reference-summary">
+        Creates a <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">&lt;section&gt;</a> element
+        and related &lt;h2&gt;, &lt;h3&gt;, ..., &lt;h6&gt; element based on nesting level.
+      </p>
+      <p>
+        The page title is typically incorporated in the &lt;h1&gt; by the view.
+      </p>
+      <p>
+        Must be nested inside a <a href="https://semanticcms.com/core/taglib/semanticcms-core.tld/tag-page">&lt;core:page&gt;</a>
+        to provide page structure information for table of contents generation.
+      </p>
+    ]]></description>
+    <name>section</name>
+    <tag-class>com.semanticcms.section.taglib.SectionTag</tag-class>
+    <body-content>scriptless</body-content>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The id used in URL anchors.
+          If not provided, is generated from the label.
+        </p>
+        <p>
+          Must be unique per page.
+          Ids generated from labels will be unique, but may change as page structure changes.
+        </p>
+      ]]></description>
+      <name>id</name>
+      <required>false</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <attribute>
+      <description><![CDATA[
+        <p>
+          The label displayed.
+          This value is also used in table of contents entries.
+        </p>
+      ]]></description>
+      <name>label</name>
+      <required>true</required>
+      <deferred-value>
+        <type>java.lang.String</type>
+      </deferred-value>
+    </attribute>
+    <dynamic-attributes>true</dynamic-attributes>
+  </tag>
 </taglib>

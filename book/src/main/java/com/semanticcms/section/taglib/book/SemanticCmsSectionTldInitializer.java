@@ -27,17 +27,17 @@ import com.semanticcms.tagreference.TagReferenceInitializer;
 
 public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
-	public SemanticCmsSectionTldInitializer() {
-		super(
-			Maven.properties.getProperty("documented.name") + " Reference",
-			"Taglib Reference",
-			"/section/taglib",
-			"/semanticcms-section.tld",
-			true,
-			Maven.properties.getProperty("documented.javadoc.link.javase"),
-			Maven.properties.getProperty("documented.javadoc.link.javaee"),
-			// Self
-			"com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.section.taglib/"
-		);
-	}
+  public SemanticCmsSectionTldInitializer() {
+    super(
+      Maven.properties.getProperty("documented.name") + " Reference",
+      "Taglib Reference",
+      "/section/taglib",
+      "/semanticcms-section.tld",
+      true,
+      Maven.properties.getProperty("documented.javadoc.link.javase"),
+      Maven.properties.getProperty("documented.javadoc.link.javaee"),
+      // Self
+      "com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.section.taglib/"
+    );
+  }
 }
