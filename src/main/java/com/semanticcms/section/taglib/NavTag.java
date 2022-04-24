@@ -46,11 +46,11 @@ public class NavTag extends SectioningContentTag<Nav> {
   @Override
   protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
     SectionImpl.writeNav(
-      request,
-      content,
-      context,
-      getElement(),
-      pageIndex
+        request,
+        content,
+        context,
+        getElement(),
+        pageIndex
     );
   }
 }

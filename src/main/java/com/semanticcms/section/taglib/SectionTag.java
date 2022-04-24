@@ -46,11 +46,11 @@ public class SectionTag extends SectioningContentTag<Section> {
   @Override
   protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
     SectionImpl.writeSection(
-      request,
-      content,
-      context,
-      getElement(),
-      pageIndex
+        request,
+        content,
+        context,
+        getElement(),
+        pageIndex
     );
   }
 }

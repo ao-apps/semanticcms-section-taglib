@@ -46,11 +46,11 @@ public class AsideTag extends SectioningContentTag<Aside> {
   @Override
   protected void writeTo(ServletRequest request, AnyPalpableContent<?, ?> content, ElementContext context, PageIndex pageIndex) throws IOException, ServletException, SkipPageException {
     SectionImpl.writeAside(
-      request,
-      content,
-      context,
-      getElement(),
-      pageIndex
+        request,
+        content,
+        context,
+        getElement(),
+        pageIndex
     );
   }
 }
