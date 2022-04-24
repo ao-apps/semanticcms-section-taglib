@@ -34,20 +34,20 @@ public class SemanticCmsSectionTldInitializer extends TagReferenceInitializer {
 
   public SemanticCmsSectionTldInitializer() throws ValidationException {
     super(
-      Maven.properties.getProperty("documented.name") + " Reference",
-      "Taglib Reference",
-      new ResourceRef(
-        new BookRef(
-          DomainName.valueOf("semanticcms.com"),
-          Path.valueOf("/section/taglib")
+        Maven.properties.getProperty("documented.name") + " Reference",
+        "Taglib Reference",
+        new ResourceRef(
+            new BookRef(
+                DomainName.valueOf("semanticcms.com"),
+                Path.valueOf("/section/taglib")
+            ),
+            Path.valueOf("/semanticcms-section.tld")
         ),
-        Path.valueOf("/semanticcms-section.tld")
-      ),
-      true,
-      Maven.properties.getProperty("documented.javadoc.link.javase"),
-      Maven.properties.getProperty("documented.javadoc.link.javaee"),
-      // Self
-      "com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.section.taglib/"
+        true,
+        Maven.properties.getProperty("documented.javadoc.link.javase"),
+        Maven.properties.getProperty("documented.javadoc.link.javaee"),
+        // Self
+        "com.semanticcms.section.taglib", Maven.properties.getProperty("project.url") + "apidocs/com.semanticcms.section.taglib/"
     );
   }
 }

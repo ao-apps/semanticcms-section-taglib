@@ -57,6 +57,7 @@ import javax.servlet.jsp.SkipPageException;
 public abstract class SectioningContentTag<SC extends SectioningContent> extends ElementTag<SC> {
 
   private ValueExpression label;
+
   public void setLabel(ValueExpression label) {
     this.label = label;
   }
@@ -78,9 +79,9 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
 
   @Override
   protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
-    PageContext pageContext = (PageContext)getJspContext();
+    PageContext pageContext = (PageContext) getJspContext();
     ServletContext servletContext = pageContext.getServletContext();
-    request = (HttpServletRequest)pageContext.getRequest();
+    request = (HttpServletRequest) pageContext.getRequest();
     pageIndex = PageIndex.getCurrentPageIndex(request);
     serialization = SerializationEE.get(servletContext, request);
     doctype = DoctypeEE.get(servletContext, request);
@@ -97,12 +98,12 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     writeTo(
-      request,
-      new Document(serialization, doctype, characterEncoding, out)
-        .setAutonli(false) // Do not add extra newlines to JSP
-        .setIndent(false), // Do not add extra indentation to JSP
-      context,
-      pageIndex
+        request,
+        new Document(serialization, doctype, characterEncoding, out)
+            .setAutonli(false) // Do not add extra newlines to JSP
+            .setIndent(false), // Do not add extra indentation to JSP
+        context,
+        pageIndex
     );
   }
 
