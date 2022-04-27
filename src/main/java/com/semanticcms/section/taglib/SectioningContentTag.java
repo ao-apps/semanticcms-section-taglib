@@ -100,7 +100,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
     writeTo(
         request,
         new Document(serialization, doctype, characterEncoding, out)
-            .setAutonli(false) // Do not add extra newlines to JSP
+            .setAutonli(false)// Do not add extra newlines to JSP
             .setIndent(false), // Do not add extra indentation to JSP
         context,
         pageIndex
