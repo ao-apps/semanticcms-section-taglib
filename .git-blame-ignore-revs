@@ -16,3 +16,6 @@ c05fb679c6fd643e328b1976ef67e58489340e10
 
 # Performed automatic clean-up with org.openrewrite.java.cleanup.Cleanup
 093b72f7474b2ad8b57419c19eac4af5e80271fc
+
+# Performed manual checkstyle clean-up
+462bdeab3d1817b1be4d28c6958ad0c1ecfdadd9
