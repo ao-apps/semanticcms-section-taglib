@@ -34,7 +34,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>.
  */
 public class SectionTag extends SectioningContentTag<Section> {
 
