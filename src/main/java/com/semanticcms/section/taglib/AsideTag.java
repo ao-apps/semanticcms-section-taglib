@@ -34,7 +34,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>.
  */
 public class AsideTag extends SectioningContentTag<Aside> {
 

@@ -23,13 +23,14 @@
 
 package com.semanticcms.section.taglib;
 
+import static com.aoapps.taglib.AttributeUtils.resolveValue;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.encoding.servlet.DoctypeEE;
 import com.aoapps.encoding.servlet.SerializationEE;
 import com.aoapps.html.Document;
 import com.aoapps.html.any.AnyPalpableContent;
-import static com.aoapps.taglib.AttributeUtils.resolveValue;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.renderer.html.PageIndex;
@@ -54,7 +55,7 @@ import javax.servlet.jsp.SkipPageException;
  * is content that defines the scope of <a href="https://www.w3.org/TR/html5/sections.html#the-header-element">headings</a>
  * and <a href="https://www.w3.org/TR/html5/sections.html#the-footer-element">footers</a>.
  */
-public abstract class SectioningContentTag<SC extends SectioningContent> extends ElementTag<SC> {
+public abstract class SectioningContentTag<C extends SectioningContent> extends ElementTag<C> {
 
   private ValueExpression label;
 
@@ -63,10 +64,10 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
   }
 
   @Override
-  protected abstract SC createElement();
+  protected abstract C createElement();
 
   @Override
-  protected void evaluateAttributes(SC sectioningContent, ELContext elContext) throws JspTagException, IOException {
+  protected void evaluateAttributes(C sectioningContent, ELContext elContext) throws JspTagException, IOException {
     super.evaluateAttributes(sectioningContent, elContext);
     sectioningContent.setLabel(resolveValue(label, String.class, elContext));
   }
@@ -78,7 +79,7 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
   private Charset characterEncoding;
 
   @Override
-  protected void doBody(SC sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
+  protected void doBody(C sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
     PageContext pageContext = (PageContext) getJspContext();
     ServletContext servletContext = pageContext.getServletContext();
     request = (HttpServletRequest) pageContext.getRequest();
@@ -90,7 +91,10 @@ public abstract class SectioningContentTag<SC extends SectioningContent> extends
   }
 
   /**
-   * @deprecated  You should probably be implementing in {@link #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
+   * {@inheritDoc}
+   *
+   * @deprecated  You should probably be implementing in
+   *              {@link #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)}
    *
    * @see  #writeTo(javax.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.renderer.html.PageIndex)
    */
