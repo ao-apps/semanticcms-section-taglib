@@ -47,7 +47,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
   </properties>
 
-  <name>SemanticCMS Section Taglib²</name>
+  <name>SemanticCMS Section Taglib</name>
   <url>https://semanticcms.com/section/taglib/</url>
   <description>Sections nested within SemanticCMS pages and elements in a JSP environment.</description>
   <inceptionYear>2013</inceptionYear>
