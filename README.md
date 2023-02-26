@@ -24,7 +24,7 @@ Sections nested within [SemanticCMS](https://github.com/ao-apps/semanticcms) pag
 * [Changelog](https://semanticcms.com/section/taglib/changelog)
 * [Taglib Reference](https://semanticcms.com/section/taglib/semanticcms-section.tld/)
 * [API Docs](https://semanticcms.com/section/taglib/apidocs/)
-* [Maven Central Repository](https://search.maven.org/artifact/com.semanticcms/semanticcms-section-taglib)
+* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.semanticcms&q=a%3Asemanticcms-section-taglib)
 * [GitHub](https://github.com/ao-apps/semanticcms-section-taglib)
 
 ## Contact Us
