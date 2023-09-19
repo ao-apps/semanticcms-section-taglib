@@ -41,6 +41,10 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
     <documented.artifactId>semanticcms-section-taglib</documented.artifactId>
     <documented.name>SemanticCMS Section Taglib</documented.name>
     <documented.description>Sections nested within SemanticCMS pages and elements in a JSP environment.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
+/ <a target="${javadoc.target}" href="https://semanticcms.com/section/">Section</a>
+/ <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
+    <javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}semanticcms-section.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
     <!-- SonarQube -->
