@@ -40,7 +40,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
 / <a target="${javadoc.target}" href="https://semanticcms.com/section/">Section</a>
 / <a target="${javadoc.target}" href="${project.url}">Taglib</a>]]></javadoc.breadcrumbs>
     <javadoc.taglibReference><![CDATA[<li><a target="${javadoc.target}" href="${project.url}semanticcms-section.tld/">Taglib Reference</a></li>]]></javadoc.taglibReference>
-            
+
     <description.html><![CDATA[Sections nested within <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a JSP environment.]]></description.html>
     <!-- TODO: Implement tests -->
     <sonar.coverage.exclusions>**.*</sonar.coverage.exclusions>
