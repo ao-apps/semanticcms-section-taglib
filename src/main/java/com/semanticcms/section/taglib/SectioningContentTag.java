@@ -67,7 +67,7 @@ public abstract class SectioningContentTag<C extends SectioningContent> extends 
   protected abstract C createElement();
 
   @Override
-  protected void evaluateAttributes(C sectioningContent, ELContext elContext) throws JspTagException, IOException {
+  protected void evaluateAttributes(C sectioningContent, ELContext elContext) throws JspTagException {
     super.evaluateAttributes(sectioningContent, elContext);
     sectioningContent.setLabel(resolveValue(label, String.class, elContext));
   }
