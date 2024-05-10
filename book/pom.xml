@@ -145,7 +145,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
             <configuration>
               <artifactItems>
                 <artifactItem>
-                  <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+                  <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0${POST-SNAPSHOT}</version>
                   <type>jar</type>
                   <includes>META-INF/semanticcms-section.tld</includes>
                 </artifactItem>
@@ -155,7 +155,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
         </executions>
         <dependencies>
           <dependency>
-            <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+            <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0${POST-SNAPSHOT}</version>
             <type>jar</type>
             <exclusions><exclusion><groupId>*</groupId><artifactId>*</artifactId></exclusion></exclusions>
           </dependency>
@@ -242,7 +242,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.16.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
-        <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+        <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib</artifactId><version>1.10.0${POST-SNAPSHOT}</version>
       </dependency>
       <dependency>
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-tag-reference</artifactId><version>1.10.2-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
