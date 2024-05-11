@@ -29,12 +29,12 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
     <relativePath>../../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib-book</artifactId><version>1.10.0-SNAPSHOT</version>
+  <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-taglib-book</artifactId><version>1.10.0</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2024-05-11T03:35:37Z</project.build.outputTimestamp>
     <module.name>com.semanticcms.section.taglib.book</module.name>
     <subproject.subpath>book/</subproject.subpath>
     <!-- These values are copied from the project being documented -->
@@ -83,7 +83,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
     <connection>scm:git:git://github.com/ao-apps/semanticcms-section-taglib.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/semanticcms-section-taglib.git</developerConnection>
     <url>https://github.com/ao-apps/semanticcms-section-taglib</url>
-    <tag>HEAD</tag>
+    <tag>semanticcms-section-taglib-book-1.10.0</tag>
   </scm>
 
   <issueManagement>
