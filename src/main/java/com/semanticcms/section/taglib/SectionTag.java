@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-taglib - Sections nested within SemanticCMS pages and elements in a JSP environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,10 +28,10 @@ import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.model.Section;
 import com.semanticcms.section.servlet.impl.SectionImpl;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.jsp.SkipPageException;
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.jsp.SkipPageException;
 
 /**
  * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>.
