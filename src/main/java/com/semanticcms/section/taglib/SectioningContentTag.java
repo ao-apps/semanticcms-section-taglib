@@ -94,9 +94,9 @@ public abstract class SectioningContentTag<C extends SectioningContent> extends 
    * {@inheritDoc}
    *
    * @deprecated  You should probably be implementing in
-   *              {@link #writeTo(jakarta.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
+   *              {@link SectioningContentTag#writeTo(jakarta.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)}
    *
-   * @see  #writeTo(jakarta.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
+   * @see  SectioningContentTag#writeTo(jakarta.servlet.ServletRequest, com.aoapps.html.any.AnyPalpableContent, com.semanticcms.core.model.ElementContext, com.semanticcms.core.servlet.PageIndex)
    */
   @Deprecated(forRemoval = false)
   @Override
