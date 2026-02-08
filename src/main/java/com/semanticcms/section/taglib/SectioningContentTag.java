@@ -25,12 +25,8 @@ package com.semanticcms.section.taglib;
 
 import static com.aoapps.servlet.el.ElUtils.resolveValue;
 
-import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.Serialization;
-import com.aoapps.encoding.servlet.DoctypeEE;
-import com.aoapps.encoding.servlet.SerializationEE;
-import com.aoapps.html.Document;
 import com.aoapps.html.any.AnyPalpableContent;
+import com.aoapps.html.servlet.DocumentEE;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.CaptureLevel;
 import com.semanticcms.core.servlet.PageIndex;
@@ -42,13 +38,13 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.jsp.JspException;
 import jakarta.servlet.jsp.JspTagException;
 import jakarta.servlet.jsp.PageContext;
 import jakarta.servlet.jsp.SkipPageException;
 import java.io.IOException;
 import java.io.Writer;
-import java.nio.charset.Charset;
 
 /**
  * <a href="https://www.w3.org/TR/html5/dom.html#sectioning-content">Sectioning content</a>
@@ -72,21 +68,18 @@ public abstract class SectioningContentTag<C extends SectioningContent> extends 
     sectioningContent.setLabel(resolveValue(label, String.class, elContext));
   }
 
+  private ServletContext servletContext;
   private HttpServletRequest request;
+  private HttpServletResponse response;
   private PageIndex pageIndex;
-  private Serialization serialization;
-  private Doctype doctype;
-  private Charset characterEncoding;
 
   @Override
   protected void doBody(C sectioningContent, CaptureLevel captureLevel) throws JspException, IOException {
     PageContext pageContext = (PageContext) getJspContext();
-    ServletContext servletContext = pageContext.getServletContext();
+    servletContext = pageContext.getServletContext();
     request = (HttpServletRequest) pageContext.getRequest();
+    response = (HttpServletResponse) pageContext.getResponse();
     pageIndex = PageIndex.getCurrentPageIndex(request);
-    serialization = SerializationEE.get(servletContext, request);
-    doctype = DoctypeEE.get(servletContext, request);
-    characterEncoding = Charset.forName(pageContext.getResponse().getCharacterEncoding());
     super.doBody(sectioningContent, captureLevel);
   }
 
@@ -103,9 +96,10 @@ public abstract class SectioningContentTag<C extends SectioningContent> extends 
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     writeTo(
         request,
-        new Document(serialization, doctype, characterEncoding, out)
-            .setAutonli(false)// Do not add extra newlines to JSP
-            .setIndent(false), // Do not add extra indentation to JSP
+        new DocumentEE(servletContext, request, response, out,
+            false, // Do not add extra newlines to JSP
+            false  // Do not add extra indentation to JSP
+        ),
         context,
         pageIndex
     );
