@@ -37,7 +37,7 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2016-10-31T02:31:02-05:00"
-    dateModified="2026-02-01T06:06:04Z"
+    dateModified="2026-02-08T04:19:32Z"
   >
     <c:set var="latestRelease" value="2.0.0" />
     <c:if test="${
@@ -53,6 +53,10 @@ along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/license
         scmUrl="@{project.scm.url}"
       >
         <ul>
+          <li>
+            Changed implementation from <ao:a href="https://oss.aoapps.com/fluent-html/">AO Fluent HTML</ao:a>
+            to <ao:a href="https://oss.aoapps.com/fluent-html/servlet/">AO Fluent HTML Servlet</ao:a>.
+          </li>
           <li>Updated for <core:link book="/" page="/" /> 2.</li>
         </ul>
       </changelog:release>
