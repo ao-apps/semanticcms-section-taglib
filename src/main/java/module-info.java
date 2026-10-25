@@ -21,7 +21,6 @@
  * along with semanticcms-section-taglib.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.semanticcms.section.taglib {
-  exports com.semanticcms.section.taglib;
   // Direct
   requires com.aoapps.html.any; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
   requires com.aoapps.html.servlet; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-servlet</artifactId>
@@ -34,4 +33,6 @@ module com.semanticcms.section.taglib {
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
   requires com.semanticcms.section.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-model</artifactId>
   requires com.semanticcms.section.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-servlet</artifactId>
+
+  exports com.semanticcms.section.taglib;
 }
